@@ -36,11 +36,11 @@ public class GameBoard {
         gameBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
         finalBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
 
-        createBoadImage();
+        createBoardImage();
         start();
     }
 
-    private void createBoadImage(){
+    private void createBoardImage(){
         Graphics2D g = (Graphics2D) gameBoard.getGraphics();
         g.setColor(Color.darkGray);
         g.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
