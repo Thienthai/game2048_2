@@ -1,3 +1,5 @@
+package com.game2048.Logic;
+
 import javax.security.auth.kerberos.KerberosTicket;
 import java.awt.event.KeyEvent;
 

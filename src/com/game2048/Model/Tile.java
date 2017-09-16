@@ -1,5 +1,9 @@
+package com.game2048.Model;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import com.game2048.Logic.Game;
+import com.game2048.Logic.DrawUtils;
 
 public class Tile {
 
@@ -48,7 +52,7 @@ public class Tile {
         this.value = value;
         this.x = x;
         this.y = y;
-        slideTo = new Point(x,y);
+        slideTo = new Point (x,y);
         tileImage = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
         drawImage();
     }

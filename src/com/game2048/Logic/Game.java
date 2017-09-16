@@ -1,7 +1,8 @@
+package com.game2048.Logic;
+
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
@@ -25,7 +26,7 @@ public class Game extends JPanel implements KeyListener, Runnable{
         setPreferredSize(new Dimension(WIDTH,HEIGHT));
         addKeyListener(this);
 
-        board = new GameBoard(WIDTH / 2 - GameBoard.BOARD_WIDTH / 2, HEIGHT - GameBoard.BOARD_HEIGHT - 10);
+        board = new GameBoard (WIDTH / 2 - GameBoard.BOARD_WIDTH / 2, HEIGHT - GameBoard.BOARD_HEIGHT - 10);
     }
 
     private void update(){
@@ -98,9 +99,11 @@ public class Game extends JPanel implements KeyListener, Runnable{
     }
 
     public synchronized void start(){
-        if(running) return;
+        if(running){
+            return;
+        }
         running = true;
-        game = new Thread(this, "game");
+        game = new Thread(this, "gamex");
         game.start();
     }
 
