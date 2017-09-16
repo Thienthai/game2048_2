@@ -9,6 +9,8 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
+//ต้องเปลี่ยน Method ที่เป็น model createBoardImage() render()
+
 public class GameBoard {
 
     public static final int ROWS = 4;

@@ -1,6 +1,6 @@
 package com.game2048;
 
-import com.game2048.Model.Game;
+import com.game2048.Controller.Game;
 
 import javax.swing.JFrame;
 

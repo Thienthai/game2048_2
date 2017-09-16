@@ -1,4 +1,4 @@
-package com.game2048.Model;
+package com.game2048.Controller;
 
 import com.game2048.Logic.GameBoard;
 import com.game2048.Logic.Keyboard;
@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+
+// แยก เป็น 2 ส่วน Controller กับ Model
 
 public class Game extends JPanel implements KeyListener, Runnable{
 

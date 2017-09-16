@@ -3,6 +3,7 @@ package com.game2048.Model;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import com.game2048.Controller.Game;
 import com.game2048.Logic.DrawUtils;
 
 public class Tile {
