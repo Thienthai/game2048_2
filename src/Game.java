@@ -98,9 +98,11 @@ public class Game extends JPanel implements KeyListener, Runnable{
     }
 
     public synchronized void start(){
-        if(running) return;
+        if(running){
+            return;
+        }
         running = true;
-        game = new Thread(this, "game");
+        game = new Thread(this, "gamex");
         game.start();
     }
 
