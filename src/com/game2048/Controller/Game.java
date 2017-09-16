@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-// แยก เป็น 2 ส่วน Controller กับ Model
+// แยก เป็น 2 ส่วน Controller กับ Models
 
 public class Game extends JPanel implements KeyListener, Runnable{
 
