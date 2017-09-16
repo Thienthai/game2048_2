@@ -1,4 +1,10 @@
-import java.awt.*;
+package com.game2048.Logic;
+
+import com.game2048.Controller.Direction;
+import com.game2048.Model.Tile;
+import com.game2048.Model.Point;
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.Random;
@@ -61,7 +67,7 @@ public class GameBoard {
     }
 
 //    private void spawn(int row,int col,int value){
-//        board[row][col] = new Tile(value,getTileX(col),getTileY(row));
+//        board[row][col] = new com.game2048.Model.Tile(value,getTileX(col),getTileY(row));
 //    }
 
     private void spawnRandom(){
@@ -169,7 +175,7 @@ public class GameBoard {
             if(board[newRow][newCol] == null){
                 board[newRow][newCol] = current;
                 board[newRow - verticalDirection][newCol - horizontalDirection] = null;
-                board[newRow][newCol].setSlideTo(new Point(newRow,newCol));
+                board[newRow][newCol].setSlideTo(new Point (newRow,newCol));
                 canMove = true;
             }
             else if(board[newRow][newCol].getValue() == current.getValue() && board[newRow][newCol].canCombine()){
@@ -177,7 +183,7 @@ public class GameBoard {
                 board[newRow][newCol].setValue(board[newRow][newCol].getValue() * 2);
                 canMove = true;
                 board[newRow - verticalDirection][newCol - horizontalDirection] = null;
-                board[newRow][newCol].setSlideTo(new Point(newRow,newCol));
+                board[newRow][newCol].setSlideTo(new Point (newRow,newCol));
                 //board[newRow][newCol].setCombineAnimation(true);
                 //add to score
 
@@ -189,7 +195,7 @@ public class GameBoard {
         return canMove;
     }
 
-    private boolean checkOutOfBounds(Direction dir,int row,int col){
+    private boolean checkOutOfBounds(Direction dir, int row, int col){
         if(dir == Direction.LEFT){
             return col < 0;
         }else if(dir == Direction.RIHGT){

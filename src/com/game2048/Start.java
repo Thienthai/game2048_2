@@ -1,3 +1,7 @@
+package com.game2048;
+
+import com.game2048.Logic.Game;
+
 import javax.swing.JFrame;
 
 public class Start {

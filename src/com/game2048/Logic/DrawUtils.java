@@ -1,3 +1,5 @@
+package com.game2048.Logic;
+
 import java.awt.*;
 import java.awt.font.TextLayout;
 import java.awt.geom.Rectangle2D;
