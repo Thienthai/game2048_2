@@ -1,4 +1,4 @@
-package com.game2048.Logic;
+package com.game2048.Controller;
 
 import java.awt.*;
 import java.awt.font.TextLayout;

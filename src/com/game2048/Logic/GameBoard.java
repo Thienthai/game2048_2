@@ -1,5 +1,6 @@
 package com.game2048.Logic;
 
+import com.game2048.Constants;
 import com.game2048.Controller.Direction;
 import com.game2048.Model.Tile;
 import com.game2048.Model.Point;
@@ -24,8 +25,8 @@ public class GameBoard {
     private int y;
 
     private static int SPACING = 10;
-    public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
-    public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
+    public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Constants.WIDTH;
+    public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Constants.HEIGHT;
     private boolean hasStarted;
 
 
@@ -48,9 +49,9 @@ public class GameBoard {
 
         for(int row = 0; row < ROWS; row++){
             for(int col = 0; col < COLS; col++){
-                int x = SPACING + SPACING * col + Tile.WIDTH * col;
-                int y = SPACING + SPACING * row + Tile.HEIGHT * row;
-                g.fillRoundRect(x,y,Tile.WIDTH,Tile.HEIGHT,Tile.ARC_WIDTH,Tile.ARC_HEIGHT);
+                int x = SPACING + SPACING * col + Constants.WIDTH * col;
+                int y = SPACING + SPACING * row + Constants.HEIGHT * row;
+                g.fillRoundRect(x,y,Constants.WIDTH,Constants.HEIGHT,Constants.ARC_WIDTH,Constants.ARC_HEIGHT);
             }
         }
     }
@@ -89,11 +90,11 @@ public class GameBoard {
     }
 
     public int getTileX(int col){
-        return SPACING + col * Tile.WIDTH + col * SPACING;
+        return SPACING + col * Constants.WIDTH + col * SPACING;
     }
 
     public int getTileY(int row){
-        return SPACING + row * Tile.HEIGHT + row * SPACING;
+        return SPACING + row * Constants.HEIGHT + row * SPACING;
     }
 
     public void render(Graphics2D g){
