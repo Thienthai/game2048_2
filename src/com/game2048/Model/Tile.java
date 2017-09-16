@@ -118,9 +118,7 @@ public class Tile {
         g.dispose();
     }
 
-    public void update(){
-
-    }
+    public void update(){}
 
     public void render(Graphics2D g){
         g.drawImage(tileImage, x, y, null);
