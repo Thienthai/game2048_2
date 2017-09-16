@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 import com.game2048.Controller.Game;
-import com.game2048.Logic.DrawUtils;
+import com.game2048.Controller.DrawUtils;
 
 public class Tile {
 
