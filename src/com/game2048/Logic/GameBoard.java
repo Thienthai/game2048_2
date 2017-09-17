@@ -1,15 +1,13 @@
 package com.game2048.Logic;
 
 import com.game2048.Controller.Direction;
+import com.game2048.Model.CreateGraphic;
 import com.game2048.Model.Tile;
 import com.game2048.Model.Point;
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
-//ต้องเปลี่ยน Method ที่เป็น model createBoardImage() render()
 
 public class GameBoard {
 
@@ -29,6 +27,7 @@ public class GameBoard {
     public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
     public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
     private boolean hasStarted;
+    private static  CreateGraphic create = new CreateGraphic();
 
 
     public GameBoard(int x,int y){
@@ -38,23 +37,8 @@ public class GameBoard {
         gameBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
         finalBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
 
-        createBoardImage();
+        create.createBoardImage(gameBoard);
         start();
-    }
-
-    private void createBoardImage(){
-        Graphics2D g = (Graphics2D) gameBoard.getGraphics();
-        g.setColor(Color.darkGray);
-        g.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
-        g.setColor(Color.lightGray);
-
-        for(int row = 0; row < ROWS; row++){
-            for(int col = 0; col < COLS; col++){
-                int x = SPACING + SPACING * col + Tile.WIDTH * col;
-                int y = SPACING + SPACING * row + Tile.HEIGHT * row;
-                g.fillRoundRect(x,y,Tile.WIDTH,Tile.HEIGHT,Tile.ARC_WIDTH,Tile.ARC_HEIGHT);
-            }
-        }
     }
 
     private void start(){
@@ -99,19 +83,20 @@ public class GameBoard {
     }
 
     public void render(Graphics2D g){
-        Graphics2D g2d = (Graphics2D)finalBoard.getGraphics();
-        g2d.drawImage(gameBoard,0,0,null);
-
-        for(int row = 0; row < ROWS; row++){
-            for(int col = 0; col < COLS; col++){
-                Tile current = board[row][col];
-                if(current == null) continue;
-                current.render(g2d);
-            }
-        }
-
-        g.drawImage(finalBoard,x,y,null);
-        g2d.dispose();
+        create.GraphicRender(g,finalBoard,board,gameBoard,x,y);
+//        Graphics2D g2d = (Graphics2D)finalBoard.getGraphics();
+//        g2d.drawImage(gameBoard,0,0,null);
+//
+//        for(int row = 0; row < ROWS; row++){
+//            for(int col = 0; col < COLS; col++){
+//                Tile current = board[row][col];
+//                if(current == null) continue;
+//                current.render(g2d);
+//            }
+//        }
+//
+//        g.drawImage(finalBoard,x,y,null);
+//        g2d.dispose();
     }
 
     public void update(){

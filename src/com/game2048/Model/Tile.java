@@ -5,17 +5,25 @@ import java.awt.image.BufferedImage;
 
 import com.game2048.Controller.Game;
 import com.game2048.Controller.DrawUtils;
+import com.game2048.Logic.GameBoard;
 
 public class Tile {
 
+
+    public static final int ROWS = 4;
+    public static final int COLS = 4;
     public static final int WIDTH = 80;
     public static final int HEIGHT = 80;
     public static final int SLIDE_SPEED = 20;
     public static final int ARC_WIDTH = 15;
     public static final int ARC_HEIGHT = 15;
+    private static int SPACING = 10;
+    public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
+    public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
 
     private int value;
     private BufferedImage tileImage;
+    private BufferedImage gameBoard;
     private Color background;
     private Color text;
     private Font font;
@@ -143,5 +151,20 @@ public class Tile {
     public void setCanCombine(boolean canCombine){
         this.canCombine = canCombine;
     }
+
+//    public void createBoardImage(){
+//        Graphics2D g = (Graphics2D) gameBoard.getGraphics();
+//        g.setColor(Color.darkGray);
+//        g.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
+//        g.setColor(Color.lightGray);
+//
+//        for(int row = 0; row < ROWS; row++){
+//            for(int col = 0; col < COLS; col++){
+//                int x = SPACING + SPACING * col + Tile.WIDTH * col;
+//                int y = SPACING + SPACING * row + Tile.HEIGHT * row;
+//                g.fillRoundRect(x,y,Tile.WIDTH,Tile.HEIGHT,Tile.ARC_WIDTH,Tile.ARC_HEIGHT);
+//            }
+//        }
+//    }
 
 }
