@@ -1,7 +1,4 @@
-package com.game2048.Model;
-
-import com.game2048.Logic.GameBoard;
-import com.game2048.Logic.Keyboard;
+package com.game2048.Logic;
 
 import javax.swing.JPanel;
 import java.awt.*;

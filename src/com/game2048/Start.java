@@ -1,9 +1,9 @@
 package com.game2048;
 
-import com.game2048.Model.Game;
+import com.game2048.Logic.Game;
 
 import javax.swing.JFrame;
-//new commit
+
 public class Start {
 
     public static void main(String[] args){
