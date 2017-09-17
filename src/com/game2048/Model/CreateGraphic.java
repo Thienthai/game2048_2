@@ -5,11 +5,11 @@ import java.awt.image.BufferedImage;
 
 public class CreateGraphic {
 
-    public static final int ROWS = 4;
-    public static final int COLS = 4;
+    private static final int ROWS = 4;
+    private static final int COLS = 4;
     private static int SPACING = 10;
-    public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
-    public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
+    private static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
+    private static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
 
     public void createBoardImage(BufferedImage gameBoard){
         Graphics2D g = (Graphics2D) gameBoard.getGraphics();

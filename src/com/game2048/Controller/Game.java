@@ -69,7 +69,7 @@ public class Game extends JPanel implements KeyListener, Runnable{
             unprocessed += (now - then) / nsPerUpdate;
             then = now;
 
-            // updare queue
+            // update queue
             while(unprocessed >= 1){
                 update++;
                 update();

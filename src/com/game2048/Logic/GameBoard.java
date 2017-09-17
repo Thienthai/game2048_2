@@ -11,8 +11,8 @@ import java.util.Random;
 
 public class GameBoard {
 
-    public static final int ROWS = 4;
-    public static final int COLS = 4;
+    private static final int ROWS = 4;
+    private static final int COLS = 4;
 
     private final int startingTiles = 2;
     private Tile[][] board;
@@ -27,8 +27,6 @@ public class GameBoard {
     public static int BOARD_WIDTH = (COLS + 1) * SPACING + COLS * Tile.WIDTH;
     public static int BOARD_HEIGHT = (ROWS + 1) * SPACING + ROWS * Tile.HEIGHT;
     private boolean hasStarted;
-    private static  CreateGraphic create = new CreateGraphic();
-
 
     public GameBoard(int x,int y){
         this.x = x;
@@ -36,6 +34,7 @@ public class GameBoard {
         board = new Tile[ROWS][COLS];
         gameBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
         finalBoard = new BufferedImage(BOARD_WIDTH,BOARD_HEIGHT,BufferedImage.TYPE_INT_RGB);
+        CreateGraphic create = new CreateGraphic();
 
         create.createBoardImage(gameBoard);
         start();
@@ -83,6 +82,7 @@ public class GameBoard {
     }
 
     public void render(Graphics2D g){
+        CreateGraphic create = new CreateGraphic();
         create.GraphicRender(g,finalBoard,board,gameBoard,x,y);
 //        Graphics2D g2d = (Graphics2D)finalBoard.getGraphics();
 //        g2d.drawImage(gameBoard,0,0,null);
@@ -185,7 +185,7 @@ public class GameBoard {
     private boolean checkOutOfBounds(Direction dir, int row, int col){
         if(dir == Direction.LEFT){
             return col < 0;
-        }else if(dir == Direction.RIHGT){
+        }else if(dir == Direction.RIGHT){
             return col > COLS - 1;
         }else if(dir == Direction.UP){
             return row < 0;
@@ -213,7 +213,7 @@ public class GameBoard {
             }
         }
 
-        else if(dir == Direction.RIHGT){
+        else if(dir == Direction.RIGHT){
             horizontalDirection = 1;
             for(int row = 0; row < ROWS; row++){
                 for(int col = COLS - 1; col >= 0; col--){
@@ -317,7 +317,7 @@ public class GameBoard {
         }
         if(Keyboard.typed(KeyEvent.VK_RIGHT)){
             //move tiles right
-            moveTiles(Direction.RIHGT);
+            moveTiles(Direction.RIGHT);
             if(!hasStarted)hasStarted = true;
         }
         if(Keyboard.typed(KeyEvent.VK_UP)){
