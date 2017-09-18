@@ -152,19 +152,4 @@ public class Tile {
         this.canCombine = canCombine;
     }
 
-//    public void createBoardImage(){
-//        Graphics2D g = (Graphics2D) gameBoard.getGraphics();
-//        g.setColor(Color.darkGray);
-//        g.fillRect(0,0,BOARD_WIDTH,BOARD_HEIGHT);
-//        g.setColor(Color.lightGray);
-//
-//        for(int row = 0; row < ROWS; row++){
-//            for(int col = 0; col < COLS; col++){
-//                int x = SPACING + SPACING * col + Tile.WIDTH * col;
-//                int y = SPACING + SPACING * row + Tile.HEIGHT * row;
-//                g.fillRoundRect(x,y,Tile.WIDTH,Tile.HEIGHT,Tile.ARC_WIDTH,Tile.ARC_HEIGHT);
-//            }
-//        }
-//    }
-
 }

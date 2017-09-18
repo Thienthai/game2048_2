@@ -37,7 +37,7 @@ public class Game extends JPanel implements KeyListener, Runnable{
     private void update(){
         board.update();
         Keyboard.update();
-    }
+    } // ตรงนี้เป็นตัว controller ระหว่าง board กับ model
 
     private void render(){
         Graphics2D  g = (Graphics2D) image.getGraphics();
